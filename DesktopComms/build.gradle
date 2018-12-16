@@ -1,0 +1,24 @@
+plugins {
+    id 'java'
+    id "jaci.openrio.gradle.GradleRIO" version "2018.01.22"
+}
+
+group 'org.robockets'
+version '1.0-SNAPSHOT'
+
+sourceCompatibility = 1.8
+
+repositories {
+    mavenCentral()
+    maven { url 'https://jitpack.io' }
+}
+
+dependencies {
+    compile wpilib()
+    compile 'com.fazecast:jSerialComm:[2.0.0,3.0.0)'
+    implementation 'com.github.rlj1202:JvJoyInterface:-SNAPSHOT'
+}
+
+task wrapper(type: Wrapper) {
+    gradleVersion = '4.4'
+}
